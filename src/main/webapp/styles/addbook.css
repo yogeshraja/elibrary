@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-color: #bcddf7 #000d1779;
+}
+
+*::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #5d5f5faf;
+    border-radius: 20px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #000d1779;
+}
+
+/* Setting baseline for rem */
+html {
+    font-size: 16px;
+}
+
+/* Applied font family */
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Styles for sitename and profile icon */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 4rem;
+    background-color: white;
+    padding: .5rem;
+    box-shadow: 0 3px 6px #00000029;
+}
+
+.navbar {
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.navbar * {
+    height: 100%;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar li {
+    display: block;
+    position: relative;
+}
+
+
+.navbar li.site-name {
+    width: 13%;
+    height: 100%;
+    padding: 0.5rem;
+}
+.navbar li.site-name a {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+}
+.navbar li.site-name a p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar li.site-name a img {
+    height: 100%;
+    transform: scale(3);
+}
+.navbar li .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.navbar li .user-info .profile-name {
+    color: black;
+    height: fit-content;
+    font-size: .8rem;
+}
+
+.navbar li .user-info .profile-avatar {
+    padding: .2rem 0;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.navbar li .user-info .profile-avatar img {
+    border-radius: 50%;
+}
+
+.app-view-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0 auto;
+    padding: 1rem;
+    width: 50%;
+}
+
+.details-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: white;
+    border: 2px groove rgba(80, 79, 78, 0.178);
+    display: flex;
+    flex-direction: row;
+}
+
+.add-book-form {
+    width: 100%;
+}
+
+section {
+    margin: 1rem;
+}
+
+label {
+    margin: 0.1rem;
+    color: rgb(6, 26, 108);
+    font-weight: 600;
+}
+
+input ,.submit-button{
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.349);
+}
+
+.labelled-input {
+    margin: 2rem 0;
+}
+
+.labelled-input label {
+    font-size: 0.6rem;
+    display: block;
+    color: rgb(37, 37, 37);
+    font-weight: 700;
+}
+
+.submit-button {
+    display: block;
+    border: none;
+    color: white;
+    background-color: rgb(6, 26, 108);
+}
+
+
+/* Media Queries for responsiveness*/
+
+/* Mobile view */
+@media screen and (min-width: 425px) {
+    html {
+        font-size: 4vw;
+    }
+
+    .app-view-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .details-container {
+        width: 90%;
+    }
+}
+
+/* Tablet view */
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 2.5vw;
+    }
+
+    .app-view-container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .details-container {
+        width: 95%;
+    }
+}
+
+/* Mini Laptop */
+@media screen and (min-width: 1024px) {
+    html {
+        font-size: 2vw;
+    }
+
+    .app-view-container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .details-container {
+        width: 90%;
+    }
+}
+
+/* Normal Laptop */
+@media screen and (min-width: 1440px) {
+    html {
+        font-size: 1vw;
+    }
+
+    .app-view-container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .details-container {
+        width: 80%;
+    }
+}

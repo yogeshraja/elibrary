@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirius | elibrary</title>
+    <!-- adding Open sans font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <!-- Adding main stylesheet -->
+    <link rel="stylesheet" href="./styles/index.css">
+    <!-- Adding JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Adding main script -->
+    <script src="./scripts/index.js" type="module" defer></script>
+</head>
+
+<body>
+<div class="content-wrapper">
+    <!-- Header with site name and user-profile -->
+    <header>
+        <!-- start Nav bar -->
+        <nav class="navbar">
+            <ul>
+                <!-- Site name and link to home page -->
+                <li class="site-name">
+                    <a href="/">
+                        <img src="assets/logo.svg" alt="company_logo">
+                        <p>Sirius Library</p>
+                    </a>
+                </li>
+                <!-- End site name -->
+                <li id="search-box">
+                    <form id="search-form" action="/book/search">
+                        <input type="search" name="searchterm" id="searchterm"/>
+                        <button type="submit" id="search-submit">
+                            <i class="material-icons">search</i>
+                        </button>
+                        <input type="checkbox" name="deepsearch" id="deepsearch" value="true"/>
+                        <label for="deepsearch">Deep Search</label>
+                    </form>
+                </li>
+
+                <li>
+                    <!-- Container for user info -->
+                    <div class="user-info">
+                        <div class="profile-name">
+                            User
+                        </div>
+                        <div class="profile-avatar">
+                            <img id="avatar" alt="profile image">
+                        </div>
+                    </div>
+                    <!-- End container for user info -->
+                </li>
+            </ul>
+        </nav>
+        <!-- End Nav bar -->
+    </header>
+    <!-- Header END -->
+    <div class="container">
+    </div>
+</div>
+</body>
+</html>

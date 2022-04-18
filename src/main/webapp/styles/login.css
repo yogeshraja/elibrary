@@ -1,0 +1,100 @@
+@import
+url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap')
+;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: radial-gradient(rgb(31, 29, 29), rgb(32, 32, 32));
+    position: relative;
+    height: 100vh;
+}
+
+.loginContainer {
+    padding-bottom:50px;
+    margin:0 auto;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    width: 40%;
+}
+
+.center {
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.EmailID {
+    margin-top: 80px !important;
+    margin-left: 60px !important;
+}
+
+.Password {
+    margin-top: 0 !important;
+    margin-left: 60px !important;
+}
+
+.phoneNum, .verifyNum {
+    margin-top: 0 !important;
+    margin-left: 40px !important;
+}
+
+.validate {
+    color: rgb(255, 255, 255);
+}
+
+.prefix {
+    color: #bcfcf6c9;
+}
+
+.input-field .prefix.active {
+    color: white !important;
+}
+
+.EmaiID label.active {
+    color: rgb(13, 223, 230) !important;
+}
+
+.Password label.active {
+    color: rgb(246, 246, 250) !important;
+}
+
+input[type="password"]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 2px solid #c2caf5 !important;
+    box-shadow: 0 1px 0 0 rgb(77, 219, 255) !important;
+}
+
+.heading {
+    margin-left: 170px;
+    color: rgb(32, 63, 32);
+    font-family: "Playfair Display SC", serif;
+}
+
+.btn {
+    /* color: rgb(32, 63, 32) !important; */
+    display: inline;
+    background-color: rgb(96, 96, 97);
+    border-radius: 12px;
+    margin: auto;
+}
+
+#button_strip {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fPassword {
+    font-size: 15px;
+    margin-top: 2px;
+    margin-left: 400px;
+}
+
+.btn:hover {
+    background-color: rgba(43, 238, 245, 0.733);
+}

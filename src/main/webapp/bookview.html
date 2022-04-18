@@ -1,0 +1,49 @@
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>View Book</title>
+    <link rel="stylesheet" href="./styles/bookview.css">
+    <script src="./scripts/bookview.js" type="module" defer></script>
+</head>
+<body>
+<div class="content-wrapper">
+    <!-- Header with site name and user-profile -->
+    <header>
+        <!-- start Nav bar -->
+        <nav class="navbar">
+            <ul>
+                <!-- Site name and link to home page -->
+                <li class="site-name">
+                    <a href="/">
+                        <img src="assets/logo.svg" alt="company_logo">
+                        <p>Sirius Library</p>
+                    </a>
+                </li>
+                <!-- End site name -->
+                <li>
+                    <!-- Container for user info -->
+                    <div class="user-info">
+                        <div class="profile-name">
+                            User
+                        </div>
+                        <div class="profile-avatar">
+                            <img id="avatar" alt="profile image">
+                        </div>
+                    </div>
+                    <!-- End container for user info -->
+                </li>
+            </ul>
+        </nav>
+        <!-- End Nav bar -->
+    </header>
+    <!-- Header END -->
+    <div id="pdf-container">
+        <iframe id="pdf-js-viewer" title="web viewer"
+                frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+</div>
+
+</body>
+</html>
