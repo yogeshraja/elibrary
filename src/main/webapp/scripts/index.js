@@ -1,6 +1,6 @@
 import {generateAvatar} from "./generateavatar.js";
 
-const BOOK_LINK = "http://localhost:8080/books";
+const BOOK_LINK = "https://sirius-elibrary.herokuapp.com/books";
 
 const constructBookElements = function (data) {
 
