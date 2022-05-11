@@ -13,7 +13,6 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,10 +20,10 @@ public class BookServiceImpl implements BookService {
 
 
     private final BookRepo bookRepo;
-    private final FileDBService fileDBService;
+    private final FileDBS3Service fileDBService;
     private final ResponseProperties responseProperties;
     @Autowired
-    public BookServiceImpl(BookRepo bookRepo, FileDBService fileDBService, ResponseProperties responseProperties) {
+    public BookServiceImpl(BookRepo bookRepo, FileDBS3Service fileDBService, ResponseProperties responseProperties) {
         this.bookRepo = bookRepo;
         this.fileDBService = fileDBService;
         this.responseProperties = responseProperties;

@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class FileBDServiceImpl implements FileDBService {
+public class FileDBServiceImpl implements FileDBService {
     @Override
     public void store(Book book) {
 
-        book.setFilePath(String.format("%s//%s%s.fileDB", SAVE_PATH, book.getTitle(),UUID.randomUUID().toString()));
-        FileOutputStream file = null;
-        ObjectOutputStream fileDBObj = null;
+        book.setFilePath(String.format("%s//%s%s.fileDB", SAVE_PATH, book.getTitle(),UUID.randomUUID()));
+        FileOutputStream file;
+        ObjectOutputStream fileDBObj;
         try {
             file = new FileOutputStream(book.getFilePath());
             fileDBObj = new ObjectOutputStream(file);
@@ -29,9 +29,9 @@ public class FileBDServiceImpl implements FileDBService {
 
     @Override
     public FileDB getFileDB(String filePath) {
-        FileInputStream file = null;
+        FileInputStream file;
         FileDB fileDB = null;
-        ObjectInputStream fileDBObj = null;
+        ObjectInputStream fileDBObj;
         try {
             file = new FileInputStream(filePath);
             fileDBObj = new ObjectInputStream(file);
