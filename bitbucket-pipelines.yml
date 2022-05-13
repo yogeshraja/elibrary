@@ -19,12 +19,12 @@ pipelines:
       - step:
           name: create tar file
           script:
-            - tar -zcvf deploy.tar.gz .
+            - tar -cvf deploy.tar.gz .
             - sleep 5
           artifacts:
             - deploy.tar.gz
           after-script:
-            - echo "deploy zip created successfully"
+            - echo "deploy zip creation"
       - step: 
           name: Deploy to prod app
           script: 
