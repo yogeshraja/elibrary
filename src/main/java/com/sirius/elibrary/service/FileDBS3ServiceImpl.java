@@ -73,4 +73,9 @@ public class FileDBS3ServiceImpl implements FileDBS3Service {
     public void deleteFileDB(String filepath) {
         s3Client.deleteObject(BUCKET_NAME,filepath);
     }
+
+    public String getImageUrl(){
+        s3Client.putObject(BUCKET_NAME,"test.png",new File("/Users/yogeshwaran.rajendra/Desktop/test.png"));
+        return s3Client.getResourceUrl(BUCKET_NAME,"test.png");
+    }
 }

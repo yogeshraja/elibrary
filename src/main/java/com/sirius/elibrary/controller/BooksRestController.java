@@ -2,6 +2,7 @@ package com.sirius.elibrary.controller;
 
 import com.sirius.elibrary.model.Book;
 import com.sirius.elibrary.service.BookService;
+import com.sirius.elibrary.service.FileDBS3Service;
 import com.sirius.elibrary.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,9 @@ public class BooksRestController {
     @Autowired
     SearchService searchService;
 
+
+    @Autowired
+    FileDBS3Service fileDBS3Service;
     //    Function to handle file Upload
     @PostMapping("/upload")
     @ResponseBody
@@ -42,4 +46,9 @@ public class BooksRestController {
     public Set<Book> searchBooks(@RequestParam String searchterm,@RequestParam boolean deepsearch){
         return searchService.searchForBooks(searchterm,deepsearch);
     }
+    @RequestMapping("/getImage")
+    public String getImage() {
+        return fileDBS3Service.getImageUrl();
+    }
+
 }

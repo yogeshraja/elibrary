@@ -14,4 +14,5 @@ public interface FileDBS3Service {
     byte[] getFileByBook(Book book);
 
     void deleteFileDB(String filepath);
+    public String getImageUrl();
 }
