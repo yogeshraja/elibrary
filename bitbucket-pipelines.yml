@@ -20,7 +20,7 @@ pipelines:
       - step:
           name: create tar file
           script:
-            - tar -zcvf deploy.tar.gz names-and-faces
+            - tar -zcvf deploy.tar.gz .
           artifacts:
             - deploy.tar.gz
           after-script:
