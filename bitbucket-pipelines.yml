@@ -19,7 +19,8 @@ pipelines:
       - step: 
           name: Deploy to prod app
           script: 
-            - tar -zcvf deploy.tar.gz .
+            - tar -cvf deploy.tar.gz .
+            - sleep 5
             - pipe: atlassian/heroku-deploy:1.2.1
               variables:
                 HEROKU_API_KEY: $HEROKU_API_KEY
