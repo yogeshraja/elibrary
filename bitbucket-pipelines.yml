@@ -1,32 +1,38 @@
-#  Template maven-build
-
-#  This template allows you to test and build your Java project with Maven.
-#  The workflow allows running tests, code checkstyle and security scans on the default branch.
-
-# Prerequisites: pom.xml and appropriate project structure should exist in the repository.
-
 image: maven:3.6.3
 
 pipelines:
   default:
-    - parallel:
+    - step:
+        name: Build and Test
+        caches:
+          - maven
+        script:
+          - mvn -B verify --file pom.xml
+        after-script:
+          - pipe: atlassian/checkstyle-report:0.3.0
+    - step:
+        name: Security Scan
+        script:
+          - pipe: atlassian/git-secrets-scan:0.5.1
+  branches:
+    master:
       - step:
-          name: Build and Test
-          caches:
-            - maven
+          name: create tar file
           script:
-            - mvn -B verify --file pom.xml
+            - tar -cvf deploy.tar.gz .
+            - sleep 5
+          artifacts:
+            - deploy.tar.gz
           after-script:
-            - pipe: atlassian/checkstyle-report:0.3.0
-      - step:
-          name: Security Scan
-          script:
-            - pipe: atlassian/git-secrets-scan:0.5.1
-      - step:
-          name: Deploy to prod
-          deployment: production
-          caches:
-            - maven
-          script:
-            - mvn install
-            - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git
+            - echo "deploy zip creation"
+      - step: 
+          name: Deploy to prod app
+          script: 
+            - pipe: atlassian/heroku-deploy:1.2.1
+              variables:
+                HEROKU_API_KEY: $HEROKU_API_KEY
+                HEROKU_APP_NAME: $HEROKU_APP_NAME
+                ZIP_FILE: 'deploy.tar.gz'
+                WAIT: 'true'
+          after-script:
+            - echo "Build successful"
