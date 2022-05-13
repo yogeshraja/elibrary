@@ -29,7 +29,7 @@ pipelines:
           script:
             - tar -zcvf deploy.tar.gz names-and-faces
           artifacts:
-            - /*.gz
+            - *.gz
           after-script:
             - ls
             - echo "deploy zip created successfully"
