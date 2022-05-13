@@ -19,7 +19,7 @@ pipelines:
       - step:
           name: create tar file
           script:
-            - tar -zcvf deploy.tar.gz names-and-faces
+            - tar -zcvf deploy.tar.gz .
             - sleep 5
           artifacts:
             - deploy.tar.gz
