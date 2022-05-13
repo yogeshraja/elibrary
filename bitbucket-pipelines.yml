@@ -16,15 +16,22 @@ pipelines:
           - pipe: atlassian/git-secrets-scan:0.5.1
   branches:
     master:
+      - step:
+          name: create tar file
+          script:
+            - tar -zcvf deploy.tar.gz names-and-faces
+            - sleep 5
+          artifacts:
+            - deploy.tar.gz
+          after-script:
+            - echo "deploy zip created successfully"
       - step: 
           name: Deploy to prod app
           script: 
-            - tar -cvf deploy.tar.gz .
-            - sleep 5
             - pipe: atlassian/heroku-deploy:1.2.1
               variables:
                 HEROKU_API_KEY: $HEROKU_API_KEY
-                HEROKU_APP_NAME: $MASTER_APP_NAME
+                HEROKU_APP_NAME: $HEROKU_APP_NAME
                 ZIP_FILE: 'deploy.tar.gz'
                 WAIT: 'true'
           after-script:
