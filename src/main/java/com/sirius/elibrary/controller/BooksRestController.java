@@ -24,7 +24,7 @@ public class BooksRestController {
 
 
     @Autowired
-    FileDBS3Service fileDBS3Service;git
+    FileDBS3Service fileDBS3Service;
     //    Function to handle file Upload
     @PostMapping("/upload")
     @ResponseBody
